@@ -5,7 +5,7 @@ WORKDIR /app
 
 EXPOSE 8000
 
-COPY . /app
+COPY . .
 # Copia os arquivos Pipfile e Pipfile.lock para o diretório de trabalho
 
 # Instala o pipenv
