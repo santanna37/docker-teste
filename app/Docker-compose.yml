@@ -1,0 +1,27 @@
+version: '3.10'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    networks:
+      - netteste
+
+  postgres:
+    image: postgres:latest
+    container_name: base-docker
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: db_docker
+    networks:
+      - netteste
+
+
+networks:
+  netteste:
